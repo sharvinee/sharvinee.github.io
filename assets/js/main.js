@@ -42,7 +42,7 @@ function initActiveNav() {
         }
       });
     },
-    { rootMargin: "-40% 0px -55% 0px" }
+    { rootMargin: "-10% 0px -85% 0px", threshold: 0 }
   );
   sections.forEach((s) => obs.observe(s));
 }
