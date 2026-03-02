@@ -36,7 +36,7 @@ export const profile = {
       org: "OakBend Medical Center · Richmond, Texas",
       period: "Jun 2025 – Aug 2025",
       points: [
-        "Analytics: Built Power BI dashboards tracking hospital readmission and mortality rates.",
+        "Analytics: Built Tableau dashboards tracking hospital readmission and mortality rates.",
         "Strategy: Developed and presented a software requirement specification document for an EHR migration project to the CEO.",
       ],
     },
