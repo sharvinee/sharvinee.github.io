@@ -26,10 +26,9 @@ export const profile = {
       org: "UT Southwestern Medical Center · Dallas, Texas",
       period: "Nov 2025 – Present",
       points: [
-        "Developed SQL queries and Power BI reporting specifications for 30+ cessation program KPIs by translating reporting requirements into defined metrics, data model relationships, and DAX measures.",
-        "Validated reports and ensured traceability by creating a requirements traceability matrix mapping business definitions to referral and visit encounter tables, SQL logic, and Power BI visual outputs.",
-        "Cleaned and standardised referral and visit encounter data by removing duplicates, resolving missing smoking status, and correcting invalid date and status values prior to analysis.",
-        "Documented data sources, metric definitions, and validation steps to ensure reproducible Power BI reporting outputs.",
+        "Analytics: Architected 30+ KPIs using SQL and Power BI.",
+        "Quality: Led data cleaning and validation for referral and encounter datasets.",
+        "Governance: Created requirements mapping and technical documentation for reproducible reporting.",
       ],
     },
     {
@@ -37,8 +36,8 @@ export const profile = {
       org: "OakBend Medical Center · Richmond, Texas",
       period: "Jun 2025 – Aug 2025",
       points: [
-        "Built Power BI dashboards tracking hospital readmission and mortality rates, enabling executive decision-making.",
-        "Developed a software requirement specification document and presented to CEO for EHR migration project.",
+        "Analytics: Built Power BI dashboards tracking hospital readmission and mortality rates.",
+        "Strategy: Developed and presented a software requirement specification document for an EHR migration project to the CEO.",
       ],
     },
     {
@@ -46,9 +45,9 @@ export const profile = {
       org: "UT Southwestern Medical Center · Dallas, Texas",
       period: "Mar 2025 – Nov 2025",
       points: [
-        "Performed descriptive statistical analysis on clinical and imaging datasets using R and jamovi for published research.",
-        "Documented research methods and analysis pipelines to ensure reproducibility of all clinical research outputs.",
-        "Enforced HIPAA privacy controls and institutional policies governing secure patient data handling.",
+        "Analysis: Performed descriptive statistical analysis on clinical and imaging datasets using R and jamovi.",
+        "Documentation: Documented research methods and analysis pipelines to ensure reproducibility.",
+        "Compliance: Enforced HIPAA privacy controls and institutional policies for secure patient data handling.",
       ],
     },
     {
@@ -56,9 +55,9 @@ export const profile = {
       org: "Botanic Health Clinic · Klang, Malaysia",
       period: "Jun 2021 – Jul 2024",
       points: [
-        "Delivered ad hoc Tableau reports for outpatient clinical programs and medical screenings.",
-        "Analysed maternal and child mortality trends using SQL; presented findings to district health officials.",
-        "Provided longitudinal care for patients with acute and chronic conditions and documented visits in EHR.",
+        "Reporting: Delivered ad hoc Tableau reports and analyzed mortality trends using SQL for district health officials.",
+        "Clinical Care: Provided longitudinal care for acute and chronic conditions, documenting visits in EHR systems.",
+        "Public Health: Presented data-driven findings on maternal and child health to improve clinical programs.",
       ],
     },
   ],
@@ -69,8 +68,8 @@ export const profile = {
       org: "Consulting Club at UT Southwestern · Dallas, Texas",
       period: "Nov 2025 – Present",
       points: [
-        "Led healthcare consulting career seminars for 60+ advanced-degree students, strengthening the clinical-to-industry transition pipeline.",
-        "Partnered with the provost to secure institutional Coursera licences for 30+ Consulting Club members.",
+        "Leadership: Led healthcare consulting career seminars for 60+ advanced-degree students.",
+        "Strategic Partnership: Partnered with the provost to secure institutional Coursera licenses for 30+ members.",
       ],
     },
     {
@@ -78,7 +77,7 @@ export const profile = {
       org: "Health Informatics Student Leadership Association (HISLA) · Dallas, Texas",
       period: "Nov 2024 – Present",
       points: [
-        "Organised a digital literacy workshop for 80+ parents, improving smartphone proficiency across Dallas K-12 community.",
+        "Community: Organised a digital literacy workshop for 80+ parents, improving smartphone proficiency across Dallas K-12 community.",
       ],
     },
   ],
