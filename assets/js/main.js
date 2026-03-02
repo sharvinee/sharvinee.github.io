@@ -1,13 +1,6 @@
 /* ── helpers ───────────────────────────────────────── */
 const get = (id) => document.getElementById(id);
 
-/* ── DOM refs ──────────────────────────────────────── */
-const yearEl   = get("year");
-const backTop  = get("back-top");
-const burger   = get("burger");
-const sidebar  = get("sidebar");
-const navLinks = document.querySelectorAll(".nav-link");
-
 /* ══════════════════════════════════════════════════
    Intersection-observer reveal (progressive enhancement)
    ══════════════════════════════════════════════════ */
@@ -32,30 +25,33 @@ function initReveal() {
    ══════════════════════════════════════════════════ */
 function initActiveNav() {
   const sections = [...document.querySelectorAll("section[id]")];
+  const links    = [...document.querySelectorAll(".nav-link")];
+
+  if (!sections.length || !links.length) return;
 
   function setActive() {
-    // Walk sections bottom-up; highlight the last one whose top is within
-    // the top 35% of the viewport (i.e. it has scrolled into view)
+    const mid = window.innerHeight * 0.4;
     let current = sections[0];
     for (const s of sections) {
-      if (s.getBoundingClientRect().top <= window.innerHeight * 0.35) {
-        current = s;
-      }
+      if (s.getBoundingClientRect().top < mid) current = s;
     }
-    navLinks.forEach((a) => {
-      a.classList.toggle("active", a.getAttribute("href") === `#${current.id}`);
-    });
+    const target = `#${current.id}`;
+    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === target));
   }
 
   window.addEventListener("scroll", setActive, { passive: true });
   window.addEventListener("resize", setActive, { passive: true });
-  setActive();
+
+  // run after first paint so layout is finalised
+  requestAnimationFrame(() => requestAnimationFrame(setActive));
 }
 
 /* ══════════════════════════════════════════════════
    Mobile sidebar toggle
    ══════════════════════════════════════════════════ */
 function initBurger() {
+  const burger  = get("burger");
+  const sidebar = get("sidebar");
   if (!burger || !sidebar) return;
   burger.addEventListener("click", () => {
     const open = sidebar.classList.toggle("open");
@@ -75,6 +71,7 @@ function initBurger() {
    Back to top
    ══════════════════════════════════════════════════ */
 function initBackTop() {
+  const backTop = get("back-top");
   if (!backTop) return;
   window.addEventListener("scroll", () => {
     backTop.classList.toggle("show", window.scrollY > 480);
@@ -84,8 +81,13 @@ function initBackTop() {
 /* ══════════════════════════════════════════════════
    Boot
    ══════════════════════════════════════════════════ */
+const yearEl = get("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+initReveal();
+initActiveNav();
+initBurger();
+initBackTop();
 initReveal();
 initActiveNav();
 initBurger();
