@@ -397,6 +397,16 @@ h1,h2,h3,h4 { margin: 0; line-height: 1.1; letter-spacing: -.02em; }
   background: rgba(88,87,255,.08);
   border: 1px solid rgba(88,87,255,.2);
 }
+.vtl-badge--lead {
+  color: #0a7c4f;
+  background: rgba(10,124,79,.08);
+  border: 1px solid rgba(10,124,79,.25);
+}
+
+.vtl-dot--lead {
+  background: #0a7c4f;
+  border-color: #0a7c4f;
+}
 
 .tcard {
   background: var(--surface);
