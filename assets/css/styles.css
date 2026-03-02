@@ -425,10 +425,9 @@ h1,h2,h3,h4 { margin: 0; line-height: 1.1; letter-spacing: -.02em; }
 }
 .tcard-top {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: .35rem;
   margin-bottom: .6rem;
 }
 .tcard-title {
@@ -948,7 +947,6 @@ h1,h2,h3,h4 { margin: 0; line-height: 1.1; letter-spacing: -.02em; }
 }
 
 @media (max-width: 480px) {
-  .tcard-top { flex-direction: column; }
   .hero-actions { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
 }
