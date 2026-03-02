@@ -34,11 +34,13 @@ function initActiveNav() {
   const sections = [...document.querySelectorAll("section[id]")];
 
   function setActive() {
-    // trigger point = 30% down the viewport
-    const trigger = window.scrollY + window.innerHeight * 0.3;
+    // Walk sections bottom-up; highlight the last one whose top is within
+    // the top 35% of the viewport (i.e. it has scrolled into view)
     let current = sections[0];
     for (const s of sections) {
-      if (s.offsetTop <= trigger) current = s;
+      if (s.getBoundingClientRect().top <= window.innerHeight * 0.35) {
+        current = s;
+      }
     }
     navLinks.forEach((a) => {
       a.classList.toggle("active", a.getAttribute("href") === `#${current.id}`);
@@ -46,7 +48,8 @@ function initActiveNav() {
   }
 
   window.addEventListener("scroll", setActive, { passive: true });
-  setActive(); // highlight correct item on page load
+  window.addEventListener("resize", setActive, { passive: true });
+  setActive();
 }
 
 /* ══════════════════════════════════════════════════
