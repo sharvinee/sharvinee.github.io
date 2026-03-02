@@ -292,15 +292,7 @@ h1,h2,h3,h4 { margin: 0; line-height: 1.1; letter-spacing: -.02em; }
 }
 
 /* ─── Timeline cards ─────────────────────────────── */
-.timeline {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  align-items: stretch;
-}
-@media (max-width: 700px) {
-  .timeline { grid-template-columns: 1fr; }
-}
+.timeline { display: grid; gap: 1rem; }
 
 /* ─── Vertical unified timeline ─────────────────── */
 .vtl {
