@@ -609,69 +609,69 @@ h1,h2,h3,h4 { margin: 0; line-height: 1.1; letter-spacing: -.02em; }
 }
 .pcard-img:has(img[src=""]) img { display: none; }
 
-/* Timeline / Leadership card logo — small square for org logo or photo
-   Recommended: 64 × 64 px square, PNG with transparent background */
+/* Timeline / Leadership card image — full-width 16:9 banner
+   Recommended: 800 × 450 px, JPG / PNG / WebP */
 .tcard-img {
-  width: 56px;
-  height: 56px;
-  border-radius: 10px;
+  margin: .4rem -1.6rem .9rem;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   background: var(--bg-tint);
-  flex-shrink: 0;
-  margin-bottom: .5rem;
 }
 .tcard-img img {
   width: 100%; height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  padding: 4px;
 }
 .tcard-img:has(img[src=""]) {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px dashed rgba(88,87,255,.25);
+  border-left: none;
+  border-right: none;
 }
 .tcard-img:has(img[src=""])::after {
-  content: "64\D764";
-  font-size: 11px;
-  font-weight: 700;
+  content: "\1F4F7  Insert image — 800 \D7 450 px (16:9)";
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text-3);
   text-align: center;
-  line-height: 1.3;
+  padding: 1rem;
 }
 .tcard-img:has(img[src=""]) img { display: none; }
 
-/* Certification card badge / logo
-   Recommended: 64 × 64 px square, PNG (provider logo or cert badge) */
+/* Certification card image — full-width 16:9 banner
+   Recommended: 800 × 450 px, JPG / PNG / WebP */
 .ccard-img {
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
+  margin: -1.25rem -1.4rem .9rem;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border-radius: 11px 11px 0 0;
+  border-bottom: 1px solid var(--border);
   background: var(--bg-tint);
-  margin-bottom: .6rem;
 }
 .ccard-img img {
   width: 100%; height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
-  padding: 4px;
 }
 .ccard-img:has(img[src=""]) {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px dashed rgba(88,87,255,.25);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
 }
 .ccard-img:has(img[src=""])::after {
-  content: "64\D764";
-  font-size: 11px;
-  font-weight: 700;
+  content: "\1F4F7  Insert image — 800 \D7 450 px (16:9)";
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text-3);
   text-align: center;
+  padding: 1rem;
 }
 .ccard-img:has(img[src=""]) img { display: none; }
 
