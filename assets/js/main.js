@@ -30,20 +30,25 @@ function initActiveNav() {
   if (!sections.length || !links.length) return;
 
   function setActive() {
-    const mid = window.innerHeight * 0.4;
-    let current = sections[0];
+    const threshold = window.innerHeight * 0.5;
+    let activeId = sections[0].id;
     for (const s of sections) {
-      if (s.getBoundingClientRect().top < mid) current = s;
+      if (s.getBoundingClientRect().top < threshold) activeId = s.id;
     }
-    const target = `#${current.id}`;
-    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === target));
+    links.forEach((a) =>
+      a.classList.toggle("active", a.getAttribute("href") === `#${activeId}`)
+    );
   }
 
   window.addEventListener("scroll", setActive, { passive: true });
   window.addEventListener("resize", setActive, { passive: true });
 
-  // run after first paint so layout is finalised
-  requestAnimationFrame(() => requestAnimationFrame(setActive));
+  // Call after everything (fonts, images) is loaded so layout positions are stable
+  if (document.readyState === "complete") {
+    setActive();
+  } else {
+    window.addEventListener("load", setActive);
+  }
 }
 
 /* ══════════════════════════════════════════════════
@@ -84,10 +89,6 @@ function initBackTop() {
 const yearEl = get("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-initReveal();
-initActiveNav();
-initBurger();
-initBackTop();
 initReveal();
 initActiveNav();
 initBurger();
