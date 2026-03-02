@@ -642,7 +642,80 @@ h1,h2,h3,h4 { margin: 0; line-height: 1.1; letter-spacing: -.02em; }
 }
 .tcard-img:has(img[src=""]) img { display: none; }
 
-/* Certification card image — full-width 16:9 banner
+/* Leadership card — image on left, content on right */
+.tcard--side-img {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 0;
+  overflow: hidden;
+  gap: 0;
+}
+.tcard--side-img .tcard-img {
+  margin: 0;
+  flex-shrink: 0;
+  width: auto;          /* driven by aspect-ratio from stretched height */
+  aspect-ratio: 16 / 9;
+  align-self: stretch;
+  border-radius: 11px 0 0 11px;
+  border: none;
+  border-right: 1px solid var(--border);
+  min-width: 160px;     /* floor so placeholder is readable */
+}
+.tcard--side-img .tcard-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.tcard--side-img .tcard-img:has(img[src=""]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tint);
+  border: 2px dashed rgba(88,87,255,.25);
+  border-right: 1px solid var(--border);
+  border-radius: 10px 0 0 10px;
+}
+.tcard--side-img .tcard-img:has(img[src=""])::after {
+  content: "\1F4F7  16:9";
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-align: center;
+  writing-mode: vertical-rl;
+  padding: 0;
+}
+.tcard--side-img .tcard-img:has(img[src=""]) img { display: none; }
+.tcard-body {
+  flex: 1;
+  min-width: 0;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 600px) {
+  .tcard--side-img {
+    flex-direction: column;
+  }
+  .tcard--side-img .tcard-img {
+    align-self: auto;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .tcard--side-img .tcard-img:has(img[src=""]) {
+    min-height: 80px;
+    border-radius: 10px 10px 0 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    writing-mode: horizontal-tb;
+  }
+  .tcard--side-img .tcard-img:has(img[src=""])::after {
+    writing-mode: horizontal-tb;
+  }
+  .tcard-body { padding: 1.2rem 1.4rem; }
+} — full-width 16:9 banner
    Recommended: 800 × 450 px, JPG / PNG / WebP */
 .ccard-img {
   margin: -1.25rem -1.4rem .9rem;
