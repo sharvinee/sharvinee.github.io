@@ -174,9 +174,10 @@ h1,h2,h3,h4 { margin: 0; line-height: 1.1; letter-spacing: -.02em; }
   background: var(--surface);
 }
 .nav-link.active {
-  color: var(--blue-pale);
+  color: var(--blue-dark);
   background: rgba(88,87,255,.12);
   padding-left: 1.1rem;
+  font-weight: 700;
 }
 
 /* Sidebar quick links */
