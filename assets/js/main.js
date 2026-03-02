@@ -31,20 +31,22 @@ function initReveal() {
    Active nav on scroll
    ══════════════════════════════════════════════════ */
 function initActiveNav() {
-  const sections = document.querySelectorAll("section[id]");
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          navLinks.forEach((a) => {
-            a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`);
-          });
-        }
-      });
-    },
-    { rootMargin: "-10% 0px -85% 0px", threshold: 0 }
-  );
-  sections.forEach((s) => obs.observe(s));
+  const sections = [...document.querySelectorAll("section[id]")];
+
+  function setActive() {
+    // trigger point = 30% down the viewport
+    const trigger = window.scrollY + window.innerHeight * 0.3;
+    let current = sections[0];
+    for (const s of sections) {
+      if (s.offsetTop <= trigger) current = s;
+    }
+    navLinks.forEach((a) => {
+      a.classList.toggle("active", a.getAttribute("href") === `#${current.id}`);
+    });
+  }
+
+  window.addEventListener("scroll", setActive, { passive: true });
+  setActive(); // highlight correct item on page load
 }
 
 /* ══════════════════════════════════════════════════
